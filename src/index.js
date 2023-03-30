@@ -1,34 +1,51 @@
-let charcterInfo = document.getElementById("characterInfo")
+function showNames(animals){
+  let main = document.querySelector("main")
+  animals.forEach(characters => {
+      let li = document.createElement("li")
+      li.innerHTML = `
+      <p id="name">${characters.name}</p>
+      <img src="${characters.image}">
+      <button id="${reset-btn}">Reset Votes</button>
+      <h2 id="header${characters.id}"></h3>
+      `
+      main.appendChild(li)
+      let btn = li.querySelector("button")
+      btn.addEventListener('click' , vote)
+      function vote(){
+          if (characters.id === 1) {
+             let initial = 1 + characters.votes ++
+             let tally = document.querySelector('#header1')
+             tally.textContent = `${initial} votes`
+          } else if (characters.id === 2) {
+             let initial = 1 + characters.votes ++
+             let tally = document.querySelector('#header2')
+             tally.textContent = `${initial} votes`
+          } else if (characters.id === 3) {
+             let initial = 1 + characters.votes ++
+             let tally = document.querySelector('#header3')
+             tally.textContent = `${initial} votes`
+          } else if (characters.id === 4) {
+             let initial = 1 + characters.votes ++
+             let tally = document.querySelector('#header4')
+             tally.textContent = `${initial} votes`
+          } else if (characters.id === 5) {
+             let initial = 1 + characters.votes ++
+             let tally = document.querySelector('#header5')
+             tally.textContent = `${initial} votes`
+          }
+        }
+      })
+}
 
-characterInfo.append(character-bar)
+function fetchAnimalsNames(){
+  fetch("http://localhost:3000/characters")
+  .then((res) => res.json())
+  .then((data) => showNames(data))
+}
 
-//fetch function
-fetch ("http://localhost:3000/user")
-  .then(res => res.json())
-  .then(json => {
-    json.map(data =>{
-        console.log(data)
-        characterInfo.append(character-bar(data))
-    })
-  })
-  
-  //create character-bar
-  function character-bar(img.name.votes) { 
-    let character-bar = document.createElement(characterInfo)
-    characterInfo.innerHTML =
-    <div class="characterInfo">
-      <div id="detailed-info">
-        <p id="name">Character's Name</p>
-        <img
-          id="image"
-          src="assets/dummy.gif"
-          alt="Character's Name"
-        />
-        <h4>Total Votes: <span id="vote-count">Character's Votes</span></h4>
-        <form id="votes-form">
-          <input type="text" placeholder="Enter Votes" id="votes" name="votes" />
-          <input type="submit" value="Add Votes" />
-        </form>
-        <button id="reset-btn">Reset Votes</button>
-      </div>
-  }
+
+function initialize(){
+  fetchAnimalsNames()
+}
+
+initialize()

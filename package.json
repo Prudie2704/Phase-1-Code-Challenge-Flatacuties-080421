@@ -1,0 +1,22 @@
+{
+  "name": "code-challenge",
+  "version": "1.0.0",
+  "description": "Today you'll be building an app for voting for the cutest animal! You will be using a local API and building out the frontend for our app, Flatacuties.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Prudie2704/Phase-1-Code-Challenge-Flatacuties-080421.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Prudie2704/Phase-1-Code-Challenge-Flatacuties-080421/issues"
+  },
+  "homepage": "https://github.com/Prudie2704/Phase-1-Code-Challenge-Flatacuties-080421#readme",
+  "dependencies": {
+    "json-server": "^0.17.3"
+  }
+}
